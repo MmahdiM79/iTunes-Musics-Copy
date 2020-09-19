@@ -26,6 +26,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 
 
@@ -54,7 +56,10 @@ int main(int argc, char const *argv[])
 
 
 
-    
+
+    // compile and run Java file
+    system("javac Copier.java");
+    system(strcat("java Copier ", usbName));
 
 
     return 0;
