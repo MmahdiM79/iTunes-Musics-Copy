@@ -29,6 +29,8 @@
 
 
 
+#define raiseERROR(x) {printf("\n\x1b[31m \berror:  \x1b[0m"#x"\n\n\n"); exit(EXIT_FAILURE);}
+
 
 int main(int argc, char const *argv[])
 {
