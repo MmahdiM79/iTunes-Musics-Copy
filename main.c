@@ -34,5 +34,15 @@
 
 int main(int argc, char const *argv[])
 {
+    // check Java file part
+    FILE *fpin = fopen("./Copier.java", "r");
+    if (fpin == NULL)
+        raiseERROR(Copier.java file is not available. please download it from this link:
+                    );
+    fclose(fpin);
+
+    
+
+
     return 0;
 }
