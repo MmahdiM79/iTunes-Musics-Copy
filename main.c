@@ -41,6 +41,19 @@ int main(int argc, char const *argv[])
                     );
     fclose(fpin);
 
+
+    
+    // ask the USB name for coping
+    printf("please enter your USB name:   ");
+
+    // hold usb name
+    char usbName[1000];
+
+    // read the client input
+    gets(usbName);
+
+
+
     
 
 
