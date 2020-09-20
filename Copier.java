@@ -1,9 +1,6 @@
 import java.io.File;
-import java.lang.reflect.Field;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -18,7 +15,7 @@ import java.util.Scanner;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.0
+ * @version 1.0.0
  */
 public final class Copier
 {
@@ -40,7 +37,7 @@ public final class Copier
         File mainFolder = new File(MAIN_FOLDER_PATH);
 
         // create destination folder
-        File usbMusicsFolder = new File("Volumes/" + args[0] + "/musics");
+        File usbMusicsFolder = new File("/Volumes/" + args[0] + "/musics");
         usbMusicsFolder.mkdirs();
 
     
@@ -69,7 +66,7 @@ public final class Copier
     // this method reads username
     private static void readUserName() throws Exception
     {
-        Scanner in = new Scanner(new File("./username.bin"));
+        Scanner in = new Scanner(new File("./username.data"));
         USER_NAME = in.nextLine();
         MAIN_FOLDER_PATH = USER_NAME + "/Music/iTunes/iTunes Media/Music";
     }
