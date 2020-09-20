@@ -1,5 +1,6 @@
 import java.io.File;
 import java.lang.reflect.Field;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ import java.util.Scanner;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.0
+ * @version 0.2.5
  */
 public final class Copier
 {
@@ -36,23 +37,23 @@ public final class Copier
         // open main folder of Musics
         File mainFolder = new File(MAIN_FOLDER_PATH);
 
+        // create destination folder
+        File usbMusicsFolder = new File("Volumes/" + args[0] + "/musics");
+        usbMusicsFolder.mkdirs();
+
     
         for (File folder: mainFolder.listFiles())
         {
-            System.out.println(folder.getAbsolutePath());
-
             if (folder.getAbsolutePath().contains(".DS_Store"))
                 continue;
 
             for (File subFolder: folder.listFiles())
             {
-                System.out.println("\t" + subFolder.getName());
-
                 if (subFolder.getAbsolutePath().contains(".DS_Store"))
                     continue;
                     
                 for (File musicFile: subFolder.listFiles())
-                    System.out.println("\t\t" + musicFile.getName());
+                    Files.copy(source, target, options);
             }
         }
     }
