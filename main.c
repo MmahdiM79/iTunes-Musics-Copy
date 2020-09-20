@@ -78,8 +78,17 @@ int main(int argc, char const *argv[])
     strcpy(command, "java Copier ");
     strcat(command, usbName);
 
+    // some messages
+    printf("coping ... \n");
+    printf("(please wait)\n");
+
+
     // run java file
     system(command);
+
+
+    // some messages
+    printf("coping finished successfully ;-)\n");
 
 
 
