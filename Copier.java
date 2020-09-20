@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Arrays;
 
 
 
@@ -12,7 +13,7 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.2
+ * @version 0.1.0
  */
 public final class Copier
 {
@@ -26,6 +27,27 @@ public final class Copier
 
     public static void main(String[] args) 
     {
-        File mainFolder = 
+        // open main folder of Musics
+        File mainFolder = new File(MAIN_FOLDER_PATH);
+
+    
+        for (File folder: mainFolder.listFiles())
+        {
+            System.out.println(folder.getAbsolutePath());
+
+            if (folder.getAbsolutePath().contains(".DS_Store"))
+                continue;
+
+            for (File subFolder: folder.listFiles())
+            {
+                System.out.println("\t" + subFolder.getName());
+
+                if (subFolder.getAbsolutePath().contains(".DS_Store"))
+                    continue;
+                    
+                for (File musicFile: subFolder.listFiles())
+                    System.out.println("\t\t" + musicFile.getName());
+            }
+        }
     }
 }
