@@ -34,6 +34,9 @@
 #define raiseERROR(x) {printf("\n\x1b[31m \berror:  \x1b[0m"#x"\n\n\n"); exit(EXIT_FAILURE);}
 
 
+
+
+
 int main(int argc, char const *argv[])
 {
     // check Java file part
@@ -44,8 +47,12 @@ int main(int argc, char const *argv[])
     fclose(fpin);
 
 
+
+
+
     // find out user name
     system("echo $HOME > username.bin");
+
 
 
     
@@ -61,9 +68,13 @@ int main(int argc, char const *argv[])
 
 
 
+
+
     // compile and run Java file
     system("javac Copier.java");
     system(strcat("java Copier ", usbName));
+
+
 
 
 
