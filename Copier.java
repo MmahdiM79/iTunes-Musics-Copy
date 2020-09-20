@@ -1,3 +1,6 @@
+import java.io.File;
+
+
 
 
 
@@ -9,12 +12,20 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.0.2
  */
 public final class Copier
 {
+            /*  Fields  */
+
+    private static final String USER_NAME = "mm.m.mm";
+    private static final String MAIN_FOLDER_PATH = "/Users/" + USER_NAME + "/Music/iTunes/iTunes Media/Music";
+
+
+
+
     public static void main(String[] args) 
     {
-        System.out.println("test");
+        File mainFolder = 
     }
 }
