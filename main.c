@@ -44,6 +44,10 @@ int main(int argc, char const *argv[])
     fclose(fpin);
 
 
+    // find out user name
+    system("echo $HOME > username.bin");
+
+
     
     // ask the USB name for coping
     printf("please enter your USB name:   ");
@@ -60,6 +64,10 @@ int main(int argc, char const *argv[])
     // compile and run Java file
     system("javac Copier.java");
     system(strcat("java Copier ", usbName));
+
+
+
+
 
 
     return 0;
