@@ -1,6 +1,8 @@
 import java.io.File;
 import java.lang.reflect.Field;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ import java.util.Scanner;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.5
+ * @version 0.3.0
  */
 public final class Copier
 {
@@ -53,7 +55,9 @@ public final class Copier
                     continue;
                     
                 for (File musicFile: subFolder.listFiles())
-                    Files.copy(source, target, options);
+                    Files.copy(musicFile.toPath(),
+                               (new File(usbMusicsFolder, musicFile.getName())).toPath(), 
+                               StandardCopyOption.REPLACE_EXISTING);
             }
         }
     }
