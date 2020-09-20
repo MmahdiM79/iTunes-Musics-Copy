@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
 
 
     // find out user name
-    system("echo $HOME > username.bin");
+    system("echo $HOME > username.data");
 
 
 
@@ -60,10 +60,10 @@ int main(int argc, char const *argv[])
     printf("please enter your USB name:   ");
 
     // hold usb name
-    char usbName[1000];
+    char usbName[100];
 
     // read the client input
-    gets(usbName);
+    fgets(usbName, 100, stdin);
 
 
 
@@ -72,7 +72,15 @@ int main(int argc, char const *argv[])
 
     // compile and run Java file
     system("javac Copier.java");
-    system(strcat("java Copier ", usbName));
+
+    // create command
+    char *command = (char *)malloc(113*(sizeof(char)));
+    strcpy(command, "java Copier ");
+    strcat(command, usbName);
+
+    // run java file
+    system(command);
+
 
 
 
