@@ -15,7 +15,7 @@ import java.util.Scanner;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 1.0.0
+ * @version 1.0.5
  */
 public final class Copier
 {
@@ -50,11 +50,15 @@ public final class Copier
             {
                 if (subFolder.getAbsolutePath().contains(".DS_Store"))
                     continue;
-                    
+                
+
                 for (File musicFile: subFolder.listFiles())
-                    Files.copy(musicFile.toPath(),
-                               (new File(usbMusicsFolder, musicFile.getName())).toPath(), 
-                               StandardCopyOption.REPLACE_EXISTING);
+                {
+                    File pastedFile = new File(usbMusicsFolder, musicFile.getName());
+
+                    if (!pastedFile.isFile())
+                        Files.copy(musicFile.toPath(), pastedFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                }
             }
         }
     }
