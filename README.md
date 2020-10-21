@@ -8,6 +8,7 @@ first compile the [main.c](https://github.com/MmahdiM79/iTunes-Musics-Copy/blob/
 ```bash
 $ gcc -o copyMusic main.c
 ```
+
 or you can use the [available exe file](https://github.com/MmahdiM79/iTunes-Musics-Copy/blob/master/copyMusic)
 
 then run the project
